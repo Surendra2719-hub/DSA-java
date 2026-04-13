@@ -14,13 +14,8 @@ class Solution {
         int sum=0;
         for(int i=0; i<n; i++){
             int cChar = totalSum(s.charAt(i));
-
-            if(i<n-1 && cChar < totalSum(s.charAt(i+1))) {
-                sum -= cChar;
-            } else {
-                sum += cChar;
-            }
-           
+            if(i<n-1 && cChar < totalSum(s.charAt(i+1))) sum -= cChar;
+            else sum += cChar;
         }
         return sum;
     }
