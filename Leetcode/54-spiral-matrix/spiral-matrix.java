@@ -30,7 +30,7 @@ class Solution {
             }
             sc++;
         }    
-        System.out.println(l);
+
         return l;
     }
 }
