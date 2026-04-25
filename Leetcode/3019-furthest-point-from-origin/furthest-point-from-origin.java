@@ -9,9 +9,6 @@ class Solution {
             else if(charArray[i]=='R') r++;
             else d++;
         }
-        System.out.println(l);
-        System.out.println(r);
-        System.out.println(d);
         if(l>=r){ 
             int ans= l-r+d;
             if(ans<0) return ans * (-1);
