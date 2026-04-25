@@ -8,12 +8,10 @@ class Solution {
         int count = 0;
         for(int i : mp.values()){
             if(i%2==0) sum+=i;
-        }
-        for(int i : mp.values()){
             if(i%2==1){ 
                 sum+=i-1;
                 count ++;
-                }
+            }
         }
         if(count>0) return sum+1;
         return sum;
