@@ -1,6 +1,7 @@
 class Solution {
     public boolean repeatedSubstringPattern(String s) {
         String str = s+s;
-        return (str.substring(1, str.length()-1)).contains(s);
+        String str1=(str.substring(1, str.length()-1));
+        return str1.contains(s);
     }
 }
