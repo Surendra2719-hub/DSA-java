@@ -33,7 +33,7 @@ class Solution {
         int max = 0;
 
         while(head2 != null){
-            max = Math.max(max, head.val + head2.val);
+            if(head.val + head2.val>max) max = head.val + head2.val;
             head = head.next;
             head2 = head2.next;
         }
