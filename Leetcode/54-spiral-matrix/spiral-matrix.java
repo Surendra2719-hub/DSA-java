@@ -1,36 +1,39 @@
 class Solution {
     public List<Integer> spiralOrder(int[][] matrix) {
+
+        List<Integer> l = new ArrayList<>();
+
         int m = matrix.length;
         int n = matrix[0].length;
-        int total=m*n;
-        int count =0;
-        List<Integer> l = new ArrayList<>();
-        
+
         int sr = 0, er = m - 1;
         int sc = 0, ec = n - 1;
-        while(count<total){
-            for(int i = sc; i <= ec && count<total; i++){
-                l.add(matrix[sr][i]);
-                count++;
-            }
-            sr++;
-            for(int i = sr; i <= er && count<total; i++){
-                l.add(matrix[i][ec]);
-                count++;
-            }
-            ec--;
-            for(int i = ec; i >= sc && count<total; i--){
-                l.add(matrix[er][i]);
-                count++;
-            }
-            er--;
-            for(int i = er; i >= sr && count<total; i--){
-                l.add(matrix[i][sc]);
-                count++;
-            }
-            sc++;
-        }    
 
+        while (sr<=er && sc<=ec) {
+            for (int j=sc; j<=ec; j++) {
+                l.add(matrix[sr][j]);
+            }
+
+            for (int i=sr+1; i<=er; i++) {
+                l.add(matrix[i][ec]);
+            }
+            if(sr<er){
+                for (int j=ec-1; j>=sc; j--) {
+                    l.add(matrix[er][j]);
+                }
+            }
+            if(sc<ec){
+                for (int i=er-1; i>sr; i--) {
+                    l.add(matrix[i][sc]);
+                }
+            }
+
+            sr++;
+            er--;
+            sc++;
+            ec--;
+        }
+         System.out.println(l);
         return l;
     }
 }
