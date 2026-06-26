@@ -33,7 +33,6 @@ class Solution {
             sc++;
             ec--;
         }
-         System.out.println(l);
         return l;
     }
 }
