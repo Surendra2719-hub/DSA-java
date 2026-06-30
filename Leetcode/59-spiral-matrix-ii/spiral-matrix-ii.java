@@ -7,30 +7,32 @@ class Solution {
 
          while (sr<=er && sc<=ec){
             for(int j=sc; j<=ec; j++){
-                arr[sr][j] = count;
+                arr[sr][j]=count;
                 count++;
             }
-            for (int i=sr+1; i<=er; i++) {
+            for(int i=sr+1; i<=ec; i++){
                 arr[i][ec]=count;
                 count++;
             }
             if(sr<er){
-                for (int j=ec-1; j>=sc; j--) {
-                    arr[er][j]=count;
-                    count++;
-                }
+            for(int j=ec-1; j>=sc;j--){
+                arr[er][j]=count;
+                count++;
+            }
             }
             if(sc<ec){
-                for (int i=er-1; i>sr; i--) {
-                    arr[i][sc]=count;
-                    count++;
-                }
+            for(int i=er-1; i>sr; i--){
+                arr[i][sc]=count;
+                count++;
+            }
             }
 
             sr++;
             er--;
             sc++;
             ec--;
+
+
          }
          return arr;
         
